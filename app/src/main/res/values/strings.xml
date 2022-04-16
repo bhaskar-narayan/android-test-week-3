@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Android Test 3</string>
+    <string name="filter">Filter</string>
+    <string name="close">Close</string>
+    <string name="filters">Filters</string>
+    <string name="source">Source</string>
+    <string name="business_today">Business Today</string>
+    <string name="motley_fool">Motley Fool</string>
+    <string name="euronews">Euronews</string>
+    <string name="new_york_times">New York Times</string>
+    <string name="description">Description</string>
+    <string name="elon_musk">Elon Musk</string>
+    <string name="washington">Washington</string>
+    <string name="apply">Apply</string>
+</resources>

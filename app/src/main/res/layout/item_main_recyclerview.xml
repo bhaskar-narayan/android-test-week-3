@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="onItemClick"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/newsTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/plusjakartasans_bold"
+            tools:text="This is a Heading"
+            android:textSize="35sp"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/newsImage"
+            android:layout_width="match_parent"
+            android:layout_marginTop="5dp"
+            android:layout_height="250dp"
+            android:scaleType="fitXY"
+            tools:src="@drawable/sample"
+            app:layout_constraintTop_toBottomOf="@+id/newsTitle" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/newsAuthor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/plusjakartasans_semibold"
+            tools:text="Author Name"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@+id/newsImage"
+            tools:layout_editor_absoluteX="10dp" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/newsSource"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/plusjakartasans_lightitalic"
+            tools:text="Source name"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@+id/newsAuthor"
+            tools:layout_editor_absoluteX="10dp" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/newsDecription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="5dp"
+            tools:text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas vero reiciendis ea beatae, et facere culpa consequatur explicabo quis itaque praesentium dolor necessitatibus consequuntur? Cumque magnam veritatis omnis sed esse. Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt aliquid magnam, inventore odit blanditiis omnis assumenda laborum repellendus ratione quas possimus porro provident quae dolore beatae earum eveniet ipsa sequi!"
+            android:textSize="15sp"
+            android:fontFamily="@font/plusjakartasans_regular"
+            app:layout_constraintTop_toBottomOf="@+id/newsSource"
+            tools:layout_editor_absoluteX="10dp" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/newsContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            tools:text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas vero reiciendis ea beatae, et facere culpa consequatur explicabo quis itaque praesentium dolor necessitatibus consequuntur? Cumque magnam veritatis omnis sed esse. Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt aliquid magnam, inventore odit blanditiis omnis assumenda laborum repellendus ratione quas possimus porro provident quae dolore beatae earum eveniet ipsa sequi!"
+            android:textSize="16sp"
+            android:fontFamily="@font/plusjakartasans_regular"
+            app:layout_constraintTop_toBottomOf="@+id/newsDecription" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
