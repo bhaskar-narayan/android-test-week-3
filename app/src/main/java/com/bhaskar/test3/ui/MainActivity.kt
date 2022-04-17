@@ -1,11 +1,11 @@
 package com.bhaskar.test3.ui
 
 import android.annotation.SuppressLint
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
 import android.view.View
+import android.widget.CompoundButton
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.bhaskar.test3.R
@@ -13,7 +13,9 @@ import com.bhaskar.test3.adapters.MainRecyclerAdapter
 import com.bhaskar.test3.databinding.ActivityMainBinding
 import com.bhaskar.test3.databinding.BottomSheetLayoutBinding
 import com.bhaskar.test3.viewmodels.MainViewModel
+import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
+
 
 class MainActivity : AppCompatActivity() {
     private lateinit var viewBinding: ActivityMainBinding
@@ -56,7 +58,23 @@ class MainActivity : AppCompatActivity() {
         with(dialogViewBinding) {
             onItemCLick = View.OnClickListener { view ->
                 when(view.id) {
-                    R.id.closeButton -> dialog.dismiss()
+                    R.id.closeButton -> {
+                        dialog.dismiss()
+                    }
+                }
+            }
+            sourceCheckBox.setOnCheckedChangeListener { buttonView, isChecked ->
+                if (isChecked) {
+                    sourceChipGroup.visibility = View.VISIBLE
+                } else {
+                    sourceChipGroup.visibility = View.GONE
+                }
+            }
+            descriptionCheckBox.setOnCheckedChangeListener { buttonView, isChecked ->
+                if (isChecked) {
+                    descriptionChipGroup.visibility = View.VISIBLE
+                } else {
+                    descriptionChipGroup.visibility = View.GONE
                 }
             }
         }

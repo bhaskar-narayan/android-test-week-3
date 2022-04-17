@@ -4,9 +4,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
+        <import type="android.view.View"/>
         <variable
             name="onItemCLick"
             type="android.view.View.OnClickListener" />
+        <variable
+            name="viewModel"
+            type="com.bhaskar.test3.viewmodels.MainViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -51,6 +55,7 @@
             android:textSize="20sp"
             android:layout_marginTop="40dp"
             app:layout_constraintStart_toStartOf="parent"
+            android:onClick="@{onItemCLick}"
             app:layout_constraintTop_toBottomOf="@+id/materialTextView" />
 
         <com.google.android.material.chip.ChipGroup
@@ -58,35 +63,44 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
+            android:visibility="gone"
             app:layout_constraintTop_toBottomOf="@+id/sourceCheckBox">
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chipBusinessToday"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.Chip.Filter"
                 android:text="@string/business_today"
+                android:onClick="@{onItemCLick}"
                 android:textSize="16sp" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/motelyFoolChip"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.Chip.Filter"
                 android:textSize="16sp"
-                android:text="@string/motley_fool" />
+                android:text="@string/motley_fool"
+                android:onClick="@{onItemCLick}"/>
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/euroNewsChip"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.Chip.Filter"
                 android:text="@string/euronews"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:onClick="@{onItemCLick}"/>
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/newYorkTimesChip"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.Chip.Filter"
                 android:text="@string/new_york_times"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:onClick="@{onItemCLick}"/>
 
         </com.google.android.material.chip.ChipGroup>
 
@@ -105,24 +119,30 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
+            android:visibility="gone"
             app:layout_constraintTop_toBottomOf="@+id/descriptionCheckBox">
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/elonMaskChip"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.Chip.Filter"
                 android:text="@string/elon_musk"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:onClick="@{onItemCLick}"/>
 
             <com.google.android.material.chip.Chip
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.Chip.Filter"
                 android:text="@string/washington"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:onClick="@{onItemCLick}"/>
 
         </com.google.android.material.chip.ChipGroup>
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/applyButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
@@ -131,6 +151,7 @@
             android:gravity="center"
             android:textAllCaps="false"
             android:textSize="17sp"
+            android:onClick="@{onItemCLick}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/descriptionChipGroup" />
 
