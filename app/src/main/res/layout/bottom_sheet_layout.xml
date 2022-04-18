@@ -76,24 +76,6 @@
                 android:textSize="16sp" />
 
             <com.google.android.material.chip.Chip
-                android:id="@+id/motelyFoolChip"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/Widget.MaterialComponents.Chip.Filter"
-                android:textSize="16sp"
-                android:text="@string/motley_fool"
-                android:onClick="@{onItemCLick}"/>
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/euroNewsChip"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/Widget.MaterialComponents.Chip.Filter"
-                android:text="@string/euronews"
-                android:textSize="16sp"
-                android:onClick="@{onItemCLick}"/>
-
-            <com.google.android.material.chip.Chip
                 android:id="@+id/newYorkTimesChip"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -132,6 +114,7 @@
                 android:onClick="@{onItemCLick}"/>
 
             <com.google.android.material.chip.Chip
+                android:id="@+id/washingtonChip"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 style="@style/Widget.MaterialComponents.Chip.Filter"

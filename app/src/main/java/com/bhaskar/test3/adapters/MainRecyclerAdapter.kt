@@ -16,9 +16,21 @@ class MainRecyclerAdapter : RecyclerView.Adapter<MainRecyclerAdapter.MyViewHolde
     private lateinit var viewBinding: ItemMainRecyclerviewBinding
     private val articles: List<Article> = listOf()
     private var news = News(articles, "", 0)
+    private var businessToday = ""
+    private var newYorkTimes = ""
+    private var elonMusk = ""
+    private var washington = ""
 
     fun submitData(news: News) {
         this.news = news
+    }
+
+    fun submitFilters(news: News, businessToday: String, newYorkTimes: String, elonMusk: String, washington: String) {
+        this.news = news
+        this.businessToday = businessToday
+        this.newYorkTimes = newYorkTimes
+        this.elonMusk = elonMusk
+        this.washington = washington
     }
 
     class MyViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView) {}
@@ -34,12 +46,23 @@ class MainRecyclerAdapter : RecyclerView.Adapter<MainRecyclerAdapter.MyViewHolde
     override fun onBindViewHolder(holder: MainRecyclerAdapter.MyViewHolder, position: Int) {
         val singleNews = news.articles[position]
         with(viewBinding) {
-            newsTitle.text = singleNews.title
-            setNewsImage(position)
-            newsAuthor.text = singleNews.author
-            newsSource.text = singleNews.source.name
-            newsDecription.text = singleNews.description
-            newsContent.text = singleNews.content
+            if (businessToday.isEmpty() && newYorkTimes.isEmpty() && elonMusk.isEmpty() && washington.isEmpty()) {
+                newsTitle.text = singleNews.title
+                setNewsImage(position)
+                newsAuthor.text = singleNews.author
+                newsSource.text = singleNews.source.name
+                newsDecription.text = singleNews.description
+                newsContent.text = singleNews.content
+            } else {
+                if (singleNews.source.name == businessToday || singleNews.source.name == newYorkTimes || singleNews.description.contentEquals(elonMusk) || singleNews.description.contentEquals(washington)) {
+                    newsTitle.text = singleNews.title
+                    setNewsImage(position)
+                    newsAuthor.text = singleNews.author
+                    newsSource.text = singleNews.source.name
+                    newsDecription.text = singleNews.description
+                    newsContent.text = singleNews.content
+                }
+            }
         }
     }
 
